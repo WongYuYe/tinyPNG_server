@@ -1,0 +1,14 @@
+{
+  "name": "tinypng_server",
+  "version": "0.0.1",
+  "description": "tinypng serveer",
+  "main": "index.js",
+  "scripts": {
+    "compress": "node index.js"
+  },
+  "author": "wyuye_",
+  "license": "ISC",
+  "dependencies": {
+    "tinify": "^1.6.0-beta.2"
+  }
+}
