@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "tinypng serveer",
   "main": "index.js",
+  "keywords": [
+    "tiny", "tinypng", "compress"
+  ],
   "scripts": {
     "compress": "node index.js"
   },
