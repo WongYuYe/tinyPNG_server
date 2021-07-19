@@ -1,7 +1,7 @@
 ## tinypng nodejs 脚本
 
 ### 支持
-- 单文件(.jpg or png)
+- 单文件(jpg or png)
 - 目录(该目录下所有jpg和png文件)
 
 ### 使用
@@ -16,6 +16,6 @@
   const filePath = 'C:\\Users\\Administrator\\Downloads';
 ```
 
-#### npm run compressed
+#### npm run compress
 
 
