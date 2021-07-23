@@ -3,13 +3,13 @@ const path = require('path')
 const tinify = require("tinify");
 
 // 设置key，登录https://tinify.com/dashboard/api查看
-tinify.key = "xxxxxxxxxxxxxxxx";
+tinify.key = "tfQ0QcbxN8BGPMRh4hdhnQ6qHMQYtTQn";
 
 // let compressionsThisMonth = tinify.compressionCount;
 // console.log('本月剩余次数---------' + compressionsThisMonth + '/500')
 
 // 设置本地文件或目录，绝对路径或相对路径，windows路径\需转译
-const filePath = 'C:\\Users\\Administrator\\Downloads';
+const filePath = 'C:\\Users\\Administrator\\Downloads\\时光历\\分享海报2.jpg';
 
 // 判断是否为目录
 const stat = fs.lstatSync(filePath);
@@ -48,12 +48,18 @@ if (isDirec) {
     console.error(new Error('非jpg或png文件，请重新选择'));
     return
   };
-  console.log('读取文件---------------')
+  console.log(`读取${filePath}---------------`)
   const source = tinify.fromFile(filePath);
   console.log('压缩文件---------------')
-  source.toFile(filePath);
+  const { dir, ext, name } = path.parse(filePath);
+  const outPutFile = path.join(dir, name + '_c' + ext)
+  source.toFile(outPutFile);
 }
 
 function isJPGorPNG(file) {
-  return ['.jpg', '.png'].includes(path.extname(file).toLowerCase())
+  return ['.jpg', '.png'].includes(getExtname(file))
+}
+
+function getExtname(file) {
+  return path.extname(file).toLowerCase()
 }
